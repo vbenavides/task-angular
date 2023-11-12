@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Primer proyecto</h1>
+  <p>{{ welcome }}</p>
+  <ul>
+    <p>total: {{ tasks().length}}</p>
+    <li *ngFor="let task of tasks(); index as i">
+      {{ i }} {{ task.description }}
+    </li>
+  </ul>
+  <hr />
+  <h2>{{ "Hola".repeat(2) }}</h2>
+  <p>la suma de 3 + 3 es {{ 3 + 3 }}</p>
+  <p>Hola soy {{ name() }} y mi edad es {{ edad }}</p>
+
+  <hr />
+
+  <p>{{ person.name }}</p>
+  <!-- <img [src]="person.img" alt="" /> -->
+  <hr>
+
+  <button (dblclick)="clickHandler()">Click me</button>
+  {{ person.age }}
+  <input type="text" [value]="person.age" (keyup.enter)="onEnter($event)" (change)="changeHandler($event)" >
+  <hr>
+  <h1>Signals</h1>
+  <input type="text" [value]="name()" (change)="changeHandler($event)">
+  <p>name: {{ name() }}</p>
+</div>
